@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit DailyResult{% endblock %}
+
+{% block body %}
+    <h1>Edit DailyResult</h1>
+
+    {{ include('daily_result/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_daily_result_index') }}">back to list</a>
+
+    {{ include('daily_result/_delete_form.html.twig') }}
+{% endblock %}

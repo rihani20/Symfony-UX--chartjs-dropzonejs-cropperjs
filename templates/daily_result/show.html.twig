@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}DailyResult{% endblock %}
+
+{% block body %}
+    <h1>DailyResult</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ daily_result.id }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ daily_result.date ? daily_result.date|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Value</th>
+                <td>{{ daily_result.value }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_daily_result_index') }}">back to list</a>
+
+    <a href="{{ path('app_daily_result_edit', {'id': daily_result.id}) }}">edit</a>
+
+    {{ include('daily_result/_delete_form.html.twig') }}
+{% endblock %}
